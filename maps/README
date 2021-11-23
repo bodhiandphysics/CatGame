@@ -1,0 +1,33 @@
+Documentation:
+
+.map Files
+
+A map file (name.map) describes the layout of a level and the location of the various game objects on it.  The format looks as follows:
+
+NAME: Testing Level
+LENGTH: 9
+HEIGHT: 9
+KEYS: 1
+
+MAP:
+*********
+*1111111*
+*1000001*
+*1T0C001*
+*100000D*
+*10K0001*
+*1000001*
+*1111111*
+***XX****%
+
+(the % is EOF).
+
+This format is very very fixed. Changes will have undefined, and probably extremely back consequences! You should probably use the above as a template, and modify it to create a new level.  The tiles are defined using chararacters.  The meanings are as follows:
+
+* = wall
+C = cat (the hero)
+D = Dog
+T = Treasure
+K = Key
+X = Gate
+A digit is an empty floor tile.  The value of the digit is (default heat - 1).  In general, any tile next to a wall should have a 1, and otherwise the number should be 0.  Feel free to create quite complicated layouts of walls.  The AI is fairly competent, but not too competent, at tracking the cat.
